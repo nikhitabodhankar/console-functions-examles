@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace properties_examples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //A list is an object which holds variables in a specific order.
+            //The type of variable that the list can store is defined using the generic syntax
+            List<int> numbers = new List<int>();
+            //Difference between a list and an array is that lists are dynamic sized, while arrays have a fixed size.
+            //Adding numbers in the list
+            numbers.Add(12);
+            numbers.Add(2);
+            numbers.Add(112);
+            numbers.Add(122);
+            numbers.Add(132);
+
+            Console.WriteLine("Added numbers in the list");
+            foreach(int item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+            //Remove method is used to remove the item from the list
+            //numbers.Remove(112);
+            //Console.WriteLine("Removed numbers from the list");
+            // foreach(int item in numbers)
+            //{
+            //   Console.WriteLine(item);
+            //}
+            //RemoveAt method is used to remove the item at specified index element
+            numbers.RemoveAt(4);
+            Console.WriteLine("Removed Numbers from the list");
+            foreach(int item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+            //Count is the property used to count the number of items in the list
+            Console.WriteLine("Total items:" + numbers.Count);
+            //We can also add the array into the list
+            int[] NumArray = new int[] { 10, 20, 30, 40, 50 };
+
+            numbers.AddRange(NumArray);//AddRange is the method which adds the array with the list
+            Console.WriteLine("Array with the List");
+            foreach(int item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
